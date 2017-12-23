@@ -13,7 +13,7 @@ class ItemDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setBackItemProperties()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +21,11 @@ class ItemDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setBackItemProperties() {
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

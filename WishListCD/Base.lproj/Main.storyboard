@@ -10,6 +10,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--WishLister-->
         <scene sceneID="tne-QT-ifu">
@@ -148,33 +154,106 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Add/Edit-->
         <scene sceneID="60o-xp-Gqg">
             <objects>
-                <viewController id="77A-Ds-UUj" sceneMemberID="viewController">
+                <viewController id="77A-Ds-UUj" customClass="ItemDetailsViewController" customModule="WishListCD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoa-wa-Pf1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload-image" translatesAutoresizingMaskIntoConstraints="NO" id="w7Z-S3-ER0">
-                                <rect key="frame" x="16" y="72" width="100" height="100"/>
+                                <rect key="frame" x="16" y="80" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hrK-ar-Hnb"/>
                                     <constraint firstAttribute="width" constant="100" id="sw7-m3-jt7"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-vG-MJX" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                                <rect key="frame" x="124" y="80" width="235" height="30"/>
+                                <color key="backgroundColor" red="0.52156862745098043" green="0.6470588235294118" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="3R7-GA-miH"/>
+                                    <constraint firstAttribute="height" constant="30" id="O0F-z9-idN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-zv-hF1" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                                <rect key="frame" x="124" y="118" width="235" height="30"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.64705882349999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IwN-6L-Xzz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2n8-AQ-zYT" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                                <rect key="frame" x="124" y="156" width="235" height="90"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.64705882349999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="xPq-Vb-VGh"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-83-BZu">
+                                <rect key="frame" x="137" y="312" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-cs-NPe">
+                                <rect key="frame" x="16" y="585" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.22352941176470587" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eBj-jM-rOx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Save Item">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-AB-9Nk">
+                                <rect key="frame" x="0.0" y="415" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="EYk-GV-IAr"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="w7Z-S3-ER0" firstAttribute="top" secondItem="eoa-wa-Pf1" secondAttribute="topMargin" constant="8" id="7Gf-yg-BCX"/>
+                            <constraint firstItem="p3s-vG-MJX" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="0LI-oF-S5f"/>
+                            <constraint firstItem="2n8-AQ-zYT" firstAttribute="leading" secondItem="w7Z-S3-ER0" secondAttribute="trailing" constant="8" id="5SF-XY-9vv"/>
+                            <constraint firstItem="w7Z-S3-ER0" firstAttribute="top" secondItem="eoa-wa-Pf1" secondAttribute="topMargin" constant="16" id="7Gf-yg-BCX"/>
+                            <constraint firstItem="p3s-vG-MJX" firstAttribute="leading" secondItem="w7Z-S3-ER0" secondAttribute="trailing" constant="8" id="8aw-4t-Ofi"/>
+                            <constraint firstItem="X9N-Az-CSr" firstAttribute="bottom" secondItem="hvS-cs-NPe" secondAttribute="bottom" constant="8" id="Kl8-rA-9GB"/>
                             <constraint firstItem="w7Z-S3-ER0" firstAttribute="leading" secondItem="eoa-wa-Pf1" secondAttribute="leadingMargin" id="M4i-EM-l0v"/>
+                            <constraint firstItem="2n8-AQ-zYT" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="QPQ-nH-PVR"/>
+                            <constraint firstItem="pdr-AB-9Nk" firstAttribute="leading" secondItem="X9N-Az-CSr" secondAttribute="leading" id="Rdq-G4-RbC"/>
+                            <constraint firstItem="Tbp-zv-hF1" firstAttribute="top" secondItem="p3s-vG-MJX" secondAttribute="bottom" constant="8" id="Yn2-eC-LwB"/>
+                            <constraint firstItem="p3s-vG-MJX" firstAttribute="top" secondItem="X9N-Az-CSr" secondAttribute="top" constant="16" id="aHl-RF-anw"/>
+                            <constraint firstItem="hvS-cs-NPe" firstAttribute="leading" secondItem="eoa-wa-Pf1" secondAttribute="leadingMargin" id="ed0-FM-284"/>
+                            <constraint firstItem="Tbp-zv-hF1" firstAttribute="leading" secondItem="w7Z-S3-ER0" secondAttribute="trailing" constant="8" id="gbC-8S-UMW"/>
+                            <constraint firstItem="Tbp-zv-hF1" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="ggy-qh-Cdl"/>
+                            <constraint firstItem="pdr-AB-9Nk" firstAttribute="trailing" secondItem="X9N-Az-CSr" secondAttribute="trailing" id="lwr-0T-6SN"/>
+                            <constraint firstItem="2n8-AQ-zYT" firstAttribute="top" secondItem="Tbp-zv-hF1" secondAttribute="bottom" constant="8" id="nsP-iB-C1i"/>
+                            <constraint firstItem="hvS-cs-NPe" firstAttribute="top" secondItem="pdr-AB-9Nk" secondAttribute="bottom" constant="8" id="rN2-Bw-52b"/>
+                            <constraint firstItem="hvS-cs-NPe" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="yp6-7t-Qty"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X9N-Az-CSr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add/Edit" id="T4l-At-1T6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mu3-79-WWA"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyK-wQ-bki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="134"/>
+            <point key="canvasLocation" x="1216.8" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LgE-l3-c8v">
@@ -184,7 +263,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dT3-Mb-4Tl">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="barTintColor" red="0.10196078431372549" green="0.12156862745098039" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

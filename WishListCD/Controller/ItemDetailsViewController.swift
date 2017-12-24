@@ -21,6 +21,7 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var imagePicker: UIImagePickerController!
     
     var stores = [Store]()
+    var types = [ItemType]()
     var itemToEdit: Item?
 
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         itemImageView.isUserInteractionEnabled = true
         itemImageView.addGestureRecognizer(singleTap)
         
-        getStores()
+        fetchPickerViewData()
         loadItemData()
     }
 
@@ -56,15 +57,23 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stores.count
+        if component == 0 {
+            return stores.count
+        }
+        
+        return types.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return stores[row].name
+        if component == 0 {
+            return stores[row].name
+        }
+        
+        return types[row].type
     }
     
 //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -88,6 +97,23 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         ad.saveContext()
     }
     
+    func generateItemTypeData() {
+        let type = ItemType(context: context)
+        type.type = "Electronics"
+        let type1 = ItemType(context: context)
+        type1.type = "Books"
+        let type2 = ItemType(context: context)
+        type2.type = "Computers"
+        let type3 = ItemType(context: context)
+        type3.type = "Luxury"
+    }
+    
+    func fetchPickerViewData() {
+        getStores()
+        getItemTypes()
+        self.storePickerView.reloadAllComponents()
+    }
+    
     func getStores() {
         let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
         
@@ -98,8 +124,21 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 generateStoreData()
                 self.stores = try context.fetch(fetchRequest)
             }
+        } catch let error as NSError {
+            print("Error: \(error)")
+        }
+    }
+    
+    func getItemTypes() {
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        
+        do {
+            self.types = try context.fetch(fetchRequest)
             
-            self.storePickerView.reloadAllComponents()
+            if self.types.count == 0 {
+                generateItemTypeData()
+                self.types = try context.fetch(fetchRequest)
+            }
         } catch let error as NSError {
             print("Error: \(error)")
         }
@@ -146,6 +185,7 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             item.price = Double(price!)!
             item.detail = details
             item.store = stores[storePickerView.selectedRow(inComponent: 0)]
+            item.type = types[storePickerView.selectedRow(inComponent: 1)]
             
             let itemImage = Image(context: context)
             itemImage.image = itemImageView.image
@@ -180,6 +220,12 @@ class ItemDetailsViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //                if let index = stores.index(where: { $0.name! == store.name!}) {
 //                    storePickerView.selectRow(index, inComponent: 0, animated: true)
 //                }
+            }
+            
+            if let type = itemToEdit?.type {
+                if let index = types.index(of: type) {
+                    storePickerView.selectRow(index, inComponent: 1, animated: true)
+                }
             }
         }
         else {

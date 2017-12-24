@@ -200,9 +200,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-83-BZu">
-                                <rect key="frame" x="137" y="312" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-83-BZu">
+                                <rect key="frame" x="16" y="282" width="96" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HSe-Vi-08D"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -222,20 +224,30 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-AB-9Nk">
-                                <rect key="frame" x="0.0" y="415" width="375" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="EYk-GV-IAr"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="311" width="375" height="266"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ns-ks-rZj">
+                                <rect key="frame" x="268" y="282" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Tq6-Sm-b4d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="p3s-vG-MJX" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="0LI-oF-S5f"/>
+                            <constraint firstItem="cXY-83-BZu" firstAttribute="leading" secondItem="eoa-wa-Pf1" secondAttribute="leadingMargin" id="28s-Ey-ECe"/>
                             <constraint firstItem="2n8-AQ-zYT" firstAttribute="leading" secondItem="w7Z-S3-ER0" secondAttribute="trailing" constant="8" id="5SF-XY-9vv"/>
                             <constraint firstItem="w7Z-S3-ER0" firstAttribute="top" secondItem="eoa-wa-Pf1" secondAttribute="topMargin" constant="16" id="7Gf-yg-BCX"/>
                             <constraint firstItem="p3s-vG-MJX" firstAttribute="leading" secondItem="w7Z-S3-ER0" secondAttribute="trailing" constant="8" id="8aw-4t-Ofi"/>
+                            <constraint firstItem="4ns-ks-rZj" firstAttribute="top" secondItem="2n8-AQ-zYT" secondAttribute="bottom" constant="36" id="GRN-k0-TTv"/>
                             <constraint firstItem="X9N-Az-CSr" firstAttribute="bottom" secondItem="hvS-cs-NPe" secondAttribute="bottom" constant="8" id="Kl8-rA-9GB"/>
                             <constraint firstItem="w7Z-S3-ER0" firstAttribute="leading" secondItem="eoa-wa-Pf1" secondAttribute="leadingMargin" id="M4i-EM-l0v"/>
+                            <constraint firstItem="4ns-ks-rZj" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="MQN-xY-oBP"/>
+                            <constraint firstItem="cXY-83-BZu" firstAttribute="top" secondItem="w7Z-S3-ER0" secondAttribute="bottom" constant="102" id="MoQ-yW-GpW"/>
                             <constraint firstItem="2n8-AQ-zYT" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="QPQ-nH-PVR"/>
                             <constraint firstItem="pdr-AB-9Nk" firstAttribute="leading" secondItem="X9N-Az-CSr" secondAttribute="leading" id="Rdq-G4-RbC"/>
                             <constraint firstItem="Tbp-zv-hF1" firstAttribute="top" secondItem="p3s-vG-MJX" secondAttribute="bottom" constant="8" id="Yn2-eC-LwB"/>
@@ -246,6 +258,7 @@
                             <constraint firstItem="pdr-AB-9Nk" firstAttribute="trailing" secondItem="X9N-Az-CSr" secondAttribute="trailing" id="lwr-0T-6SN"/>
                             <constraint firstItem="2n8-AQ-zYT" firstAttribute="top" secondItem="Tbp-zv-hF1" secondAttribute="bottom" constant="8" id="nsP-iB-C1i"/>
                             <constraint firstItem="hvS-cs-NPe" firstAttribute="top" secondItem="pdr-AB-9Nk" secondAttribute="bottom" constant="8" id="rN2-Bw-52b"/>
+                            <constraint firstItem="pdr-AB-9Nk" firstAttribute="top" secondItem="cXY-83-BZu" secondAttribute="bottom" constant="8" id="sid-os-ejC"/>
                             <constraint firstItem="hvS-cs-NPe" firstAttribute="trailing" secondItem="eoa-wa-Pf1" secondAttribute="trailingMargin" id="yp6-7t-Qty"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X9N-Az-CSr"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F0A397C1FE8C95800D0FA7F /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0A397B1FE8C95800D0FA7F /* ItemDetailsViewController.swift */; };
+		5F11B7BB1FEEB43400E5E376 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F11B7BA1FEEB43400E5E376 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		5F14D3AC1FE7041300D28886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14D3AB1FE7041300D28886 /* AppDelegate.swift */; };
 		5F14D3AE1FE7041300D28886 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F14D3AD1FE7041300D28886 /* ViewController.swift */; };
 		5F14D3B11FE7041300D28886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F14D3AF1FE7041300D28886 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5F0A397B1FE8C95800D0FA7F /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		5F11B7BA1FEEB43400E5E376 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		5F14D3A81FE7041300D28886 /* WishListCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishListCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F14D3AB1FE7041300D28886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F14D3AD1FE7041300D28886 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5F11B7B91FEEB40D00E5E376 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F11B7BA1FEEB43400E5E376 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5F14D39F1FE7041300D28886 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		5F14D3AA1FE7041300D28886 /* WishListCD */ = {
 			isa = PBXGroup;
 			children = (
+				5F11B7B91FEEB40D00E5E376 /* Extensions */,
 				5F14D3D01FE70D3F00D28886 /* Model */,
 				5FC015131FE7262500F0A71E /* View */,
 				5F0A397A1FE8C8D900D0FA7F /* Controller */,
@@ -217,6 +228,7 @@
 				5F14D3B41FE7041300D28886 /* WishListCD.xcdatamodeld in Sources */,
 				5FC0150E1FE711C200F0A71E /* Store+CoreDataClass.swift in Sources */,
 				5FC015151FE7284A00F0A71E /* MaterialView.swift in Sources */,
+				5F11B7BB1FEEB43400E5E376 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				5F14D3AC1FE7041300D28886 /* AppDelegate.swift in Sources */,
 				5FC015111FE711C200F0A71E /* Item+CoreDataProperties.swift in Sources */,
 				5F0A397C1FE8C95800D0FA7F /* ItemDetailsViewController.swift in Sources */,

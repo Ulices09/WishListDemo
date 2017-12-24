@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
         
-        generateTestData()
+        //generateTestData()
         attemptFetch()
     }
 
@@ -53,18 +53,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 156
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let items = fetchResultsController.fetchedObjects, items.count > 0 {
+            let item = items[indexPath.row]
+            performSegue(withIdentifier: "ItemDetailVC", sender: item)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ItemDetailVC" {
+            if let destination = segue.destination as? ItemDetailsViewController {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
+    
     func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
         let item = fetchResultsController.object(at: indexPath as IndexPath)
         cell.configureCell(item: item)
     }
     
+    @IBAction func filterSegmentChange(_ sender: Any) {
+        attemptFetch()
+        itemsTableView.reloadData()
+    }
+    
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-        let dateSort = NSSortDescriptor(key: "creationDate", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        
+        let dataSort: NSSortDescriptor!
+        let selectedFilter = filterSegmentControl.selectedSegmentIndex
+        
+        if selectedFilter == 0 {
+            dataSort = NSSortDescriptor(key: "creationDate", ascending: false)
+        } else if selectedFilter == 1 {
+            dataSort = NSSortDescriptor(key: "price", ascending: true)
+        } else {
+            dataSort = NSSortDescriptor(key: "title", ascending: true)
+        }
+        
+//        let dateSort = NSSortDescriptor(key: "creationDate", ascending: false)
+//        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+//        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        
+        fetchRequest.sortDescriptors = [dataSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
         fetchResultsController = controller
+        
         
         do {
             try controller.performFetch()

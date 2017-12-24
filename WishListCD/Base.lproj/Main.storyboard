@@ -36,12 +36,15 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="filterSegmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="alO-9Y-qvh"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oK2-mW-IT9">
                                 <rect key="frame" x="8" y="123" width="359" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="156" id="M4l-lS-od9" customClass="ItemCell" customModule="WishListCD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="156" id="M4l-lS-od9" customClass="ItemCell" customModule="WishListCD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="359" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M4l-lS-od9" id="yyx-5n-Iav">
@@ -51,7 +54,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeI-hF-N0k">
                                                     <rect key="frame" x="8" y="8" width="343" height="139.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oKF-gv-nZY">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload-image" translatesAutoresizingMaskIntoConstraints="NO" id="oKF-gv-nZY">
                                                             <rect key="frame" x="8" y="9" width="100" height="120"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="Glv-Ey-elB"/>
@@ -169,9 +172,8 @@
                                     <constraint firstAttribute="width" constant="100" id="sw7-m3-jt7"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-vG-MJX" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-vG-MJX" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
                                 <rect key="frame" x="124" y="80" width="235" height="30"/>
-                                <color key="backgroundColor" red="0.52156862745098043" green="0.6470588235294118" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="3R7-GA-miH"/>
                                     <constraint firstAttribute="height" constant="30" id="O0F-z9-idN"/>
@@ -180,9 +182,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-zv-hF1" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-zv-hF1" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
                                 <rect key="frame" x="124" y="118" width="235" height="30"/>
-                                <color key="backgroundColor" red="0.52156862749999999" green="0.64705882349999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="IwN-6L-Xzz"/>
                                 </constraints>
@@ -190,9 +191,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2n8-AQ-zYT" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2n8-AQ-zYT" customClass="CustomTextField" customModule="WishListCD" customModuleProvider="target">
                                 <rect key="frame" x="124" y="156" width="235" height="90"/>
-                                <color key="backgroundColor" red="0.52156862749999999" green="0.64705882349999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="xPq-Vb-VGh"/>
                                 </constraints>
@@ -209,7 +209,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-cs-NPe">
                                 <rect key="frame" x="16" y="585" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.18823529411764706" green="0.22352941176470587" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.12156862745098039" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eBj-jM-rOx"/>
                                 </constraints>
@@ -217,6 +217,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="77A-Ds-UUj" eventType="touchUpInside" id="Zdy-4o-VR7"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-AB-9Nk">
                                 <rect key="frame" x="0.0" y="415" width="375" height="162"/>
@@ -248,8 +251,20 @@
                         <viewLayoutGuide key="safeArea" id="X9N-Az-CSr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit" id="T4l-At-1T6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mu3-79-WWA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mu3-79-WWA">
+                            <connections>
+                                <action selector="deleteBtnPressed:" destination="77A-Ds-UUj" id="Cu9-sp-7vF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="deleteButton" destination="mu3-79-WWA" id="05z-HW-TYx"/>
+                        <outlet property="detailsTextField" destination="2n8-AQ-zYT" id="F6V-WY-W2z"/>
+                        <outlet property="itemImageView" destination="w7Z-S3-ER0" id="fOA-1U-diL"/>
+                        <outlet property="priceTextField" destination="Tbp-zv-hF1" id="JMc-k0-eCe"/>
+                        <outlet property="storePickerView" destination="pdr-AB-9Nk" id="yiG-TE-IHs"/>
+                        <outlet property="titleTextField" destination="p3s-vG-MJX" id="5aw-mF-vgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyK-wQ-bki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,6 +297,6 @@
         <image name="upload-image" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Hn-Xv-XAZ"/>
+        <segue reference="ZKP-Ea-qgZ"/>
     </inferredMetricsTieBreakers>
 </document>
